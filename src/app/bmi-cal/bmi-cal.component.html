@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-6">
+
+        <div class="box">
+        
+            <table>
+                <tr>
+                    <td><label>Height</label> :</td>
+                    <td><input (keyup)="onHeight($event)" type="number"/></td>
+                    <td><button [ngClass]="(heightClassEnable)? 'btn btn-primary' : 'btn btn-secondary'" (click)="getHeightByFeet($event)"  class="btn btn-primary" [disabled]="feetDisable">Feet</button></td>
+                    <td><button [ngClass]="(!heightClassEnable)? 'btn btn-primary' : 'btn btn-secondary'" (click)="getHeightByCM($event)" class="btn btn-primary" [disabled]="cmDisable">CM</button></td>
+                </tr>
+                <tr>
+                    <td><label>Weight</label> : </td>
+                    <td><input (keyup)="onWeight($event)" type="number"/></td>
+                    <td><button [ngClass]="(!weightClassEnable)? 'btn btn-primary' : 'btn btn-secondary'" (click)="getWeightByLBS($event)" [disabled]="lbsDisable"> LBS</button></td>
+                    <td><button [ngClass]="(weightClassEnable)? 'btn btn-primary' : 'btn btn-secondary'" (click)="getWeightByKgs($event)" [disabled]="kgsDisable"> KGS </button></td>
+                </tr>
+                <tr>
+                     <td colspan="4" style="text-align: center;">
+                        <Button [disabled]="submitDisable">Submit</Button>
+                    </td>
+                </tr>
+            </table>
+        
+        </div>
+      </div>
+    </div>
+</div>
